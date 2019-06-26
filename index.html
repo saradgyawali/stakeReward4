@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>BXYSTATS</title>
+    <link rel="icon" type="image/png" href="image/logo.png" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Francois+One|Kaushan+Script|Old+Standard+TT&display=swap"
+      rel="stylesheet"
+    />
+    <link   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" rel="stylesheet"/>
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-sm navbar-custom  fixed-top nav-color py-0">
+        <div class="container-fluid">
+          <button class="navbar-toggler m-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse nav-color" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto ">
+              <li class="nav-item active my-1">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item my-1">
+                <a class="nav-link" href="https://support.beaxy.com/hc/en-us/articles/360012299614-What-are-PLS-tokens-and-how-can-I-get-them-" target="_blank">What is PLS?</a>
+              </li>
+              <li class="nav-item my-1">
+                <a class="nav-link " href="https://www.youtube.com/channel/UCS_nEFZ0zryNICGp73ocJ0Q" target="_blank">How To?</a>
+              </li>
+              <li class="nav-item my-1">
+                  <a class="nav-link " href="https://www.beaxy.com" target="_blank">Beaxy</a>
+                </li>
+
+              <li class="nav-item my-1">
+                  <a class="nav-link" href="https://beaxy.com/registration?code=QUY1FSM0ZE" target="_blank">Register</a>
+                </li>
+            </ul>
+            <ul class="ms-10 navbar-nav ml-auto d-flex justify-content-center align-items-center">
+                <li class="social-icon my-1 ">
+                  <a class="nav-link" href="https://t.me/Beaxy" target="_blank"><i class="fab fa-telegram-plane  fa-2x" style="color:#2facde"></i></a>
+                </li>
+                <li class="social-icon my-1 ">
+                  <a class="nav-link" href="https://discord.gg/f47saKH" target="_blank"><i class="fab fa-discord  fa-2x" style="color:#7289dc"></i></a>
+                </li>
+                <li class="social-icon my-1 ">
+                    <a class="nav-link" href="https://twitter.com/BeaxyExchange" target="_blank"><i class="fab fa-twitter  fa-2x" style="color:#1ab2e7"></i></a>
+                  </li>
+              </ul>
+          </div>
+        </div>
+        </nav>
+    <div class="container d-flex justify-content-center align-items-center flex-column my-5">
+        <h2 class="mt-4 blink_me">
+          <a href="https://beaxy.com/registration?code=QUY1FSM0ZE" target="_blank">
+            <span style="color:#ff0000">10,000 $BXY GIVEAWAY</span>
+            <span style="color:#1ab2e7"> | </span>  
+            <span style="color:#2f00ff">REGISTER</span> 
+            <span style="color:#2f00ff"> &</span>
+            <span style="color:#2f00ff"> KYC</span>
+          </a>
+        </h2>
+        <div class="d-flex d-row justify-content-around align-items-center mt-2">
+          <img src="image/logo.png" class="mr-4"/>
+          <h2>Beaxy Reward Calculator</h2>
+        </div>
+      <form class="col-12 row  justify-content-center" action="localhost:3000"  method="POST">
+          <div class="col-12  row mb-4 justify-content-center">
+            <div class="my-2 col-12 col-md-3  mr-3 text-center " >
+              <div class="d-flex flex-row justify-content-center align-item-center itemHeight" >
+              <p>
+                Daily Volume 
+              </p>
+              <button type="button" class="ml-2 questionStyle" data-toggle="modal" data-target=".example-modal-sm">?</button>
+                <div class="modal fade example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-sm firstAlert">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                            <h6  id="exampleModalLongTitle "></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            24 Hour Volume
+                          </div>
+                        
+                        </div>
+                  </div>
+                </div>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="dailyVolume"
+                name="dailyVolume"
+                placeholder="$"
+                oninput="calculateFeeInDollar(),calculateRewardToken()"
+              />
+            </div>
+            <div class="mr-3 my-2 col-12 col-md-3 text-center">
+            <div class="d-flex flex-row justify-content-center align-item-center itemHeight">
+                <p>Average Fee %</p>
+              <button type="button" class="questionStyle ml-2" data-toggle="modal" data-target=".secondexample-modal-sm">?</button>
+              <div class="modal fade secondexample-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm secondAlert">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                          <h6  id="exampleModalLongTitle"></h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          % Average fee paid by traders
+                        </div>
+                      </div>
+                </div>
+              </div>
+            </div>
+              <select class="form-control" id="averageFee">
+                <option value="0.1375" select="selected">  (Average) 0.1375 % </option>
+              </select>
+            </div>
+            <div class="col-12 col-md-3 text-center itemHeight">
+              <p>Average fee $ </p>
+              <div
+                id="averageFeePercentage"
+                name="averageFeePercentage"
+                class="outputStyle"
+              >
+                $
+              </div>
+            </div>
+          </div>
+          <div class="col-12 row mb-4 justify-content-center">
+            <div class=" mr-3 my-2 col-12 col-md-3 text-center">
+            <div class="d-flex flex-row justify-content-center align-item-center itemHeight">
+              <p>Total PLS Stake</p>
+                <button type="button" class="questionStyle ml-2" data-toggle="modal" data-target=".thirdexample-modal-sm">?</button>
+                <div class="modal fade thirdexample-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-sm thirdAlert">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                            <h6  id="exampleModalLongTitle"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            Total number of $BXY locked in the exchange.
+                          </div>
+                        </div>
+                  </div>
+                </div>
+              </div>
+              <input
+                type="text"
+                class="form-control "
+                id="numberOfStake"
+                name="numberOfStake"
+                placeholder=""
+                oninput="calculateRewardToken()"
+              />
+            </div>
+            <div class="mr-3 my-2 col-12 col-md-3 text-center">
+            <div class="d-flex flex-row  justify-content-center align-item-center itemHeight">
+              <p>Stake Duration</p>
+                  <button type="button" class="questionStyle ml-2" data-toggle="modal" data-target=".bd-example-modal-sm">?</button>
+                  <div class="modal fade bd-example-modal-sm fourthAlert" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                              <h6  id="exampleModalLongTitle"></h6>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              Longer the stake duration, Better the Rewards.
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+              <select class="form-control" id="exampleFormControlSelect1" onchange="calculateRewardToken(this.value)">
+                <option value="15" selected="selected">( 1 month ) 15 %</option>
+                <option value="20" >( 1-6 months ) 20 % </option>
+                <option value="25" >( > 6 months ) 25 %</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-3 text-center itemHeight">
+              <p>Reward Per Token</p>
+              <div id="rewardToken" name="rewardToken" class="outputStyle">$</div>
+            </div>
+          </div>
+        
+          <div class="col-12  col-md-9 flex-row itemHeight thirdRow">
+            <div class=" col-12 col-md-9 m-auto p-auto text-center">
+              <h4 class="font-weight-bold">Your Total Stake!</h3>
+              <input
+                type="text"
+                id="holdingToken"
+                class="form-control col-12  col-md-5 m-auto"
+                name="holdingStake"
+              />
+              <button onClick="onSubmit()" class="btn btn-lg  my-4">
+                Calculate
+              </button>
+            </div>
+        </form>
+        <div class="col-6 m-auto text-center">
+          <h4>Your Earnings!</h4>
+          <div class="">
+            <p>
+              Daily: $ <span id="dailyCalc" class="font-weight-bold"></span>
+            </p>
+            <p>
+              Weekly: $ <span id="weeklyCalc" class="font-weight-bold"></span>
+            </p>
+            <p>
+              Monthly: $ <span id="yearlyCalc" class="font-weight-bold"></span>
+            </p>
+            <hr>
+          </div>
+
+          <a href="https://twitter.com/CryptoGenesis55" class="twitter">Follow me on Twitter @CryptoGenesis55</a>
+        </div>
+
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="logic.js"></script>
+  </body>
+</html>
