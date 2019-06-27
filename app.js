@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
-const port = process.env.PORT || 22;
+const port = process.env.PORT || 80;
 let averageFeeInDollar;
 let rewardToken;
 
